@@ -67,56 +67,210 @@
 
 #methods
 #default values
-def sayhi(name, age=-1)
-  puts ("Hello" + name + " you are " + age.to_s)
+# def sayhi(name, age=-1)
+#   puts ("Hello" + name + " you are " + age.to_s)
+# end
+# puts "Top"
+# sayhi(" Arvo", 2)
+# sayhi(" Charles")
+# puts "Bottom"
+#
+# #returns
+# def cube(num)
+#   return ("the total is " + (num * num * num).to_s), 36
+#   "the result is "
+# end
+#
+# puts cube(3)
+# puts cube(3)[0]
+#
+# #if statements
+# ismale = true
+# istall = false
+#
+# if ismale and istall
+#   puts "you are male and tall"
+# elsif ismale and !istall
+#   puts "you are a short male"
+# elsif !male and istall
+#   puts "you are tall but not male"
+# end
+#
+# if ismale and istall
+#   puts "you are male and tall"
+# else
+#   puts "you are either not male not tall or both"
+# end
+#
+# if ismale or istall
+#   puts "you are either not male or not tall"
+# else
+#   puts "you are either not male not tall or both"
+# end
+#
+# # comparisons in if statements
+# def max(num1, num2, num3)
+#   if num1 >= num2 and num1 >= num3
+#     return num1
+#   elsif num2 >= num1 and num2 >= num3
+#     return num2
+#   else
+#     return num3
+#   end
+# end
+#
+# puts max(10, 7, 8)
+
+# creating a better calculator
+# puts "Enter first number:"
+# num1 = gets.chomp().to_f
+# puts "Enter first operator:"
+# op = gets.chomp()
+# puts "Enter second number:"
+# num2 = gets.chomp().to_f
+#
+# if op == "+"
+#   puts (num1 + num2)
+# elsif op == "-"
+#   puts (num1-num2)
+# elsif op == "/"
+#   puts (num1/num2)
+# elsif op == "*"
+#   puts (num1*num2)
+# else
+#   puts "Invalid operator"
+# end
+
+# case expressions to check diff conditions -> switch statements
+# mon -> Monday
+# tue -> Tuesday
+# def get_day_name(day)
+#   day_name = ""
+#
+#   case day
+#   when "mon"
+#     day_name = "Monday"
+#   when "tue"
+#     day_name = "Tuesday"
+#   when "wed"
+#     day_name = "Wednesday"
+#   when "thu"
+#     day_name = "Thursday"
+#   when "fri"
+#     day_name = "Friday"
+#   when "sat"
+#     day_name = "Saturday"
+#   when "sun"
+#     day_name = "Sunday"
+#   else
+#     day_name = "Invalid abbreviation"
+#   end
+#
+#   return day_name
+# end
+#
+# puts get_day_name("wed")
+
+# while loops
+#index = 1
+
+# while index <= 5
+#   puts index
+#   index += 1
+# end
+
+# Guessing game
+# secret_word = "giraffe"
+# guess = ""
+# guess_count = 0
+# guess_limit = 3
+# out_of_guesses = false
+#
+# while guess != secret_word and !out_of_guesses
+#   if guess_count < guess_limit
+#   puts "Enter a guess"
+#   guess = gets.chomp()
+#   guess_count += 1
+# else
+#   out_of_guesses = true
+# end
+# end
+# if out_of_guesses
+#   puts "you lose"
+# else
+#   puts "you won"
+# end
+
+# for loops
+
+# friends = ["Arvo", "Liam", "Sunny", "Mae", "Anna"]
+#
+# for friend in friends
+#   puts friend
+# end
+#
+# friends.each do |friend|
+#   puts friend
+# end
+#
+# # print from 0 to 5
+# for index in 0..5
+#   puts index
+# end
+#
+# # print 6 times
+# 6.times do |index|
+#   puts index
+# end
+
+# exponant method
+# 2,3 -> 2^3
+# def pow(base_num, pow_num)
+#   # works for positive exponants
+#   result = 1
+#   pow_num.times do |index|
+#     result = result * base_num
+#   end
+#   return result
+# end
+#
+# puts pow(4, 3)
+# puts pow(5, 2)
+# puts pow(6, 4)
+
+# Read from an external file
+File.open("employees.txt", "r") do |file|
+  # puts file.read().include? "Jim"
+  # puts file.readline()
+  #puts file.readline()
+  puts file.readlines()
+
+  # for line in file.readlines()
+  #   company =  "paper company"
+  #   puts company
+  # end
 end
-puts "Top"
-sayhi(" Arvo", 2)
-sayhi(" Charles")
-puts "Bottom"
 
-#returns
-def cube(num)
-  return ("the total is " + (num * num * num).to_s), 36
-  "the result is "
+# file = File.open("employees.txt", "r") # remember to close the file
+# puts file.read
+# file.close()
+
+# write files
+File.open("employees.txt", "a") do |file|
+  file.write("Oscar, accountant")
 end
 
-puts cube(3)
-puts cube(3)[0]
+#overwrite
+# File.open("employees.txt", "w") do |file|
+#   file.write("no employees")
+# end
 
-#if statements
-ismale = true
-istall = false
-
-if ismale and istall
-  puts "you are male and tall"
-elsif ismale and !istall
-  puts "you are a short male"
-elsif !male and istall
-  puts "you are tall but not male"
+File.open("index.html", "w") do |file|
+  file.write("<h1>Hello</h1>")
 end
 
-if ismale and istall
-  puts "you are male and tall"
-else
-  puts "you are either not male not tall or both"
+File.open("employees.txt", "r+") do |file|
+  file.readline()
+  file.readchar()
+  file.write("Overridden")
 end
-
-if ismale or istall
-  puts "you are either not male or not tall"
-else
-  puts "you are either not male not tall or both"
-end
-
-# comparisons in if statements
-def max(num1, num2, num3)
-  if num1 >= num2 and num1 >= num3
-    return num1
-  elsif num2 >= num1 and num2 >= num3
-    return num2
-  else
-    return num3
-  end
-end
-
-puts max(10, 7, 8)
