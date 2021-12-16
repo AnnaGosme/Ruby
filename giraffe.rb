@@ -64,6 +64,82 @@
 # # puts states["Oregon"]
 # puts states[:NewYork]
 # puts states[4]
+# puts "hi"
+#
+# phrase = "Giraffe Academy"
+# puts phrase[0, 3]
+# puts phrase.index("A")
+#
+# puts -5.86543
+# puts 5 + 9
+#
+# num = 20 + 5
+# puts num
+# add .to_s when concatenating string and number
+# puts ("my fav num " + num.to_s)
+#
+# puts num.abs()
+#
+# num2 = 20.67
+# puts num2.round()
+# puts num2.ceil()
+# puts num2.floor()
+#
+# puts 1 + 7
+# puts 1.7 + 7
+# puts 10 / 7
+# puts 10 / 7.0
+#
+# puts "Enter your name:"
+
+# name = gets.chomp()
+# puts "Enter your age:"
+# age = gets.chomp()
+# puts ("Hello " + name + " ,you are a cool " + age + " year old")
+
+#NUMBERS
+# puts "Enter an int:"
+# num1 = gets.chomp().to_i
+# puts = "Enter another int"
+# num2 = gets.chomp().to_i
+#
+# # puts (num1.to_i + num2.to_i)
+# puts (num1 + num2)
+#
+# puts "Enter a float"
+# num3 = gets.chomp()
+# puts "Enter another float"
+# num4 = gets.chomp()
+# # puts (num3.to_f + num4.to_f)
+# puts (num3 + num4)
+
+#MAD LIBS
+# puts "Enter a color"
+# color = gets.chomp()
+# puts "Enter a plural noun"
+# plural_noun = gets.chomp()
+# puts "Enter a celebrity name"
+# celebrity = gets.chomp()
+#
+# puts ("Roses are "+ color)
+# puts (plural_noun + " are blue")
+# puts ("I love " + celebrity)
+
+#Arrays
+# friends = Array["Arvo", "Sunny", "Mae", "Anna"]
+# puts friends
+# puts friends[0]
+# puts friends[-1]
+# friends[-1] = "Liam"
+# puts friends
+# # grab all from index and up to but not including
+# puts friends[0, 2]
+# # empty Arrays
+# empty = Array.new
+# puts empty[0]
+# ages = [36, 33, 8, 2]
+# puts ages
+
 
 #methods
 #default values
