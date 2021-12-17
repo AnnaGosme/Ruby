@@ -350,3 +350,16 @@ File.open("employees.txt", "r+") do |file|
   file.readchar()
   file.write("Overridden")
 end
+
+# Handling errors
+
+luck_nums = [1, 2, 3, 4, 5]
+
+begin
+  luck_nums["dog"]
+  num = 10 / 0
+rescue ZeroDivisionError
+  puts "Division by 0 error"
+rescue TypeError => e
+  puts e
+end
