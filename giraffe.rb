@@ -314,54 +314,187 @@
 # puts pow(5, 2)
 # puts pow(6, 4)
 
-# Read from an external file
-File.open("employees.txt", "r") do |file|
-  # puts file.read().include? "Jim"
-  # puts file.readline()
-  #puts file.readline()
-  puts file.readlines()
+# # Read from an external file
+# File.open("employees.txt", "r") do |file|
+#   # puts file.read().include? "Jim"
+#   # puts file.readline()
+#   #puts file.readline()
+#   puts file.readlines()
+#
+#   # for line in file.readlines()
+#   #   company =  "paper company"
+#   #   puts company
+#   # end
+# end
+#
+# # file = File.open("employees.txt", "r") # remember to close the file
+# # puts file.read
+# # file.close()
+#
+# # write files
+# File.open("employees.txt", "a") do |file|
+#   file.write("Oscar, accountant")
+# end
+#
+# #overwrite
+# # File.open("employees.txt", "w") do |file|
+# #   file.write("no employees")
+# # end
+#
+# File.open("index.html", "w") do |file|
+#   file.write("<h1>Hello</h1>")
+# end
+#
+# File.open("employees.txt", "r+") do |file|
+#   file.readline()
+#   file.readchar()
+#   file.write("Overridden")
+# end
+#
+# # Handling errors
+#
+# luck_nums = [1, 2, 3, 4, 5]
+#
+# begin
+#   luck_nums["dog"]
+#   num = 10 / 0
+# rescue ZeroDivisionError
+#   puts "Division by 0 error"
+# rescue TypeError => e
+#   puts e
+# end
+#
+# # classes and objects
+# # create custom data types -> class
+#
+# class Book
+#   attr_accessor :title, :author, :pages
+# end
+#
+# book1 = Book.new()
+# book1.title = "Harry Potter"
+# book1.author = "JK Rowling"
+# book1.pages = 400
+#
+# puts book1.title
+# puts book1.pages
+#
+# book2 = Book.new()
+# book2.title = "Lord of the rings"
+# book2.author = "Tolkein"
+# book2.pages = 2000
+#
+# puts book2.title
 
-  # for line in file.readlines()
-  #   company =  "paper company"
-  #   puts company
-  # end
-end
+# initialise an object
+# class Book
+#   attr_accessor :title, :author, :pages
+#   def initialize(title, author, pages)
+#     @title = title
+#     @author = author
+#     @pages = pages
+#   end
+# end
+#
+# book3 = Book.new("Harry Potter", "JK Rowling", 400)
+#
+# book4 = Book.new("Lord of the Rings", "Tolkein", 500)
+#
+# puts book3.title
 
-# file = File.open("employees.txt", "r") # remember to close the file
-# puts file.read
-# file.close()
+# instance methods / class methods / object methods
+# class Student
+#   attr_accessor :name, :major, :gpa
+#   def initialize(name, major, gpa)
+#     @name = name
+#     @major = major
+#     @gpa = gpa
+#   end
+#
+#   def has_honors
+#     if @gpa >= 3.5
+#       return true
+#   end
+#     return false
+#   end
+# end
+#
+# jim = Student.new("Jim", "Business", 2.6)
+# pam = Student.new("Pam", "Art", 3.6)
+#
+# puts jim.has_honors
+# puts pam.has_honors
 
-# write files
-File.open("employees.txt", "a") do |file|
-  file.write("Oscar, accountant")
-end
+# multiple choice quiz
 
-#overwrite
-# File.open("employees.txt", "w") do |file|
-#   file.write("no employees")
+# class Question
+#   attr_accessor :prompt, :answer
+#   def initialize(prompt, answer)
+#     @prompt = prompt
+#     @answer = answer
+#   end
 # end
 
-File.open("index.html", "w") do |file|
-  file.write("<h1>Hello</h1>")
-end
+# p1 = "What color are apples?\n(a)red\(b)purple\(c)orange"
+# p2 = "What color are bananas?\n(a)pink\n(b)red\n(c)yellow"
+# p3 = "What color are pears?\n(a)yellow\n(b)green\n(c)orange"
 
-File.open("employees.txt", "r+") do |file|
-  file.readline()
-  file.readchar()
-  file.write("Overridden")
-end
+# questions = [
+#   Question.new(p1, "a"),
+#   Question.new(p2, "c"),
+#   Question.new(p3, "b")
+# ]
 
-# Handling errors
+# def run_test(questions)
+#   answer = ""
+#   score = 0
+#   for question in questions
+#     puts question.prompt
+#     answer = gets.chomp()
+#     if answer = question.answer
+#       score += 1
+#     end
+#   end
+#   puts ("You got " + score.to_s + "/" + questions.length().to_s)
+# end
 
-luck_nums = [1, 2, 3, 4, 5]
+# run_test(questions)
 
-begin
-  luck_nums["dog"]
-  num = 10 / 0
-rescue ZeroDivisionError
-  puts "Division by 0 error"
-rescue TypeError => e
-  puts e
-end
+# inheritance
 
-# classes and objects
+# class Chef
+#   def make_chicken
+#     puts "The chef makes chicken"
+#   end
+#   def make_salad
+#     puts "the chef makes salad"
+#   end
+#   def make_special_dish
+#     puts "the chef makes bbq ribs"
+#   end
+# end
+
+# chef = Chef.new
+# chef.make_chicken()
+
+# class ItalianChef < Chef
+#   def make_special_dish
+#     puts "the chef makes eggplant parm"
+#   end
+#   def make_pasta
+#     puts "the chef makes pasta"
+#   end
+# end
+
+# italian_chef = ItalianChef.new()
+# italian_chef.make_salad()
+
+# chef.make_special_dish()
+# italian_chef.make_special_dish()
+
+# modules -> containers containing groups of methods
+
+require_relative "useful_tools.rb"
+include Tools
+
+Tools.sayhi("Arvo")
