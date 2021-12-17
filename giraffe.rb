@@ -363,3 +363,5 @@ rescue ZeroDivisionError
 rescue TypeError => e
   puts e
 end
+
+# classes and objects
